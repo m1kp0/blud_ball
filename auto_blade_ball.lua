@@ -1,3 +1,4 @@
+-- haha open source
 local me = game.Players.LocalPlayer
 local rs = game:GetService("RunService")
 local VirtualInputManager = game:GetService("VirtualInputManager") or game:FindFirstDescendant("VirtualInputManager")
