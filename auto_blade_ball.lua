@@ -1,4 +1,3 @@
--- haha open source
 local me = game.Players.LocalPlayer
 local rs = game:GetService("RunService")
 local VirtualInputManager = game:GetService("VirtualInputManager") or game:FindFirstDescendant("VirtualInputManager")
@@ -36,7 +35,7 @@ end
 
 local function auto_gameplay(bool)
     if bool then
-        if me.Character.Humanoid ~= nil then
+        if me.Character ~= nil then
             local me_char = me.Character
             local me_hrp = me_char.HumanoidRootPart
             if check_alive(me) then
@@ -60,7 +59,7 @@ end
 
 local function auto_parry(bool)
     if bool then
-        if me.Character.Humanoid ~= nil then
+        if me.Character ~= nil then
             local me_char = me.Character
             local me_hrp = me_char.HumanoidRootPart
             if check_alive(me) then
