@@ -70,7 +70,6 @@ local function auto_parry(bool)
                         if me_char and me_hrp then
                             if ball:GetAttribute("target") == me.Name and not Parried and Distance / Speed <= 0.55 then
                                 click_parry_button()
-                                stepped:Wait()
                                 Parried = true
                                 Cooldown = tick()
                                 if (tick() - Cooldown) >= 1 then
@@ -100,14 +99,21 @@ local l = loadstring(game:HttpGet("https://raw.githubusercontent.com/bloodball/-
 local w = l:Window("main")
 
 w:Toggle("auto parry", false, function(e) 
-    boolean = e
+    local boolean = e
     while pre_sim:Wait() and boolean do
         auto_parry(boolean)
     end
 end)
 
+w:Toggle("auto parry 2", false, function(e) 
+    local boolean = e
+    while stepped:Wait() and boolean do
+        auto_parry(boolean)
+    end
+end)
+
 w:Toggle("auto parry + gameplay", false, function(e) 
-    boolean = e
+    local boolean = e
     while pre_sim:Wait() and boolean do
         auto_gameplay(boolean)
     end
